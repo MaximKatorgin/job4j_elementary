@@ -2,21 +2,30 @@ package ru.job4j.calculator;
 
 public class Calculator {
     public static void main(String[] args) {
-        int one = 1;
-        int two = 2;
-        int result = one + two;
-        System.out.println(result);
+        int firstNumber = 1;
+        int secondNumber = 2;
+        System.out.println("Addition: " + add(firstNumber, secondNumber));
+        System.out.println("Division: " + divide(6, 2));
+        System.out.println("Subtraction: " + subtract(5, 2));
+        System.out.println("Multiplication: " + multiply(4, 2));
+    }
 
-        int six = 6;
-        int four = 4;
-        int five = 5;
+    private static int add(int a, int b) {
+        return a + b;
+    }
 
-        result = six / two;
-        System.out.println(result);
-        result = five - two;
-        System.out.println(result);
-        result = four * two;
-        System.out.println(result);
+    private static int subtract(int a, int b) {
+        return a - b;
+    }
 
+    private static int multiply(int a, int b) {
+        return a * b;
+    }
+
+    private static int divide(int a, int b) {
+        if (b == 0) {
+            throw new IllegalArgumentException("Divider cannot be zero");
+        }
+        return a / b;
     }
 }
