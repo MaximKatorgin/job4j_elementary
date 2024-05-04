@@ -1,0 +1,53 @@
+package ru.job4j.loop;
+
+import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+class CounterTest {
+
+    @Test
+    void whenStart10AndFinish20ThenSum165() {
+        int start = 10;
+        int finish = 20;
+        int expected = 165;
+
+        int sum = Counter.sum(start, finish);
+
+        assertThat(sum).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStart10AndFinish10ThenSum10() {
+        int start = 10;
+        int finish = 10;
+        int expected = 10;
+
+        int sum = Counter.sum(start, finish);
+
+        assertThat(sum).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStart15AndFinish10ThenSum0() {
+        int start = 15;
+        int finish = 10;
+        int expected = 0;
+
+        int sum = Counter.sum(start, finish);
+
+        assertThat(sum).isEqualTo(expected);
+    }
+
+    @Test
+    void whenStartMinus10AndFinish10ThenSum0() {
+        int start = -10;
+        int finish = 10;
+        int expected = 0;
+
+        int sum = Counter.sum(start, finish);
+
+        assertThat(sum).isEqualTo(expected);
+    }
+
+}
